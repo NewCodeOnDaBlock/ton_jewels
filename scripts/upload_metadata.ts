@@ -22,8 +22,8 @@ async function updateMetadataFiles(metadataFolderPath: string, imagesIpfsHash: s
         const file = await readFile(filePath);
 
         const metadata = JSON.parse(file.toString());
-        // metadata.image =
-        //     index != files.length - 1 ? `ipfs://${imagesIpfsHash}/${index}.jpg` : `ipfs://${imagesIpfsHash}/logo.jpg`;
+        metadata.image =
+            index != files.length - 1 ? `ipfs://${imagesIpfsHash}/${index}.jpg` : `ipfs://${imagesIpfsHash}/logo.jpg`;
         metadata.lottie =
             index != files.length - 1 ? `ipfs://${imagesIpfsHash}/${index}.json` : `ipfs://${imagesIpfsHash}/logo.json`;
 
